@@ -40,7 +40,6 @@ app.post('/api/jogada-ia', async (req, res) => {
 
         const result = await engine.go({ depth: 18 });
         const bestMove = result.bestmove;
-        //agora enviando info Mate
         const isMate = result.info[4].score.unit
         res.json({
             movimento: bestMove,
